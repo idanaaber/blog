@@ -1,5 +1,5 @@
 Halo PHP Framework
-===
+=== dsf
 
 Halo is an extremly simple, open source, mixed MVC-like base for your projects, built using PHP5, by me, Henno Täht, with some help from my students. 
 It aims to be easy to undestand, effortless to use and using a small footprint.
