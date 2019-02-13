@@ -1,231 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<?foreach($posts as $post):?>
 
-    <title>Blog Post - Start Bootstrap Template</title>
+<div class="span8">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/blog-post.css" rel="stylesheet">
+    <h1><?=$post['post_subject']?></h1>
+    <p><?=$post['post_text']?></p>
 
-</head>
-
-<body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+    <div>
+        <span class="badge badge-success">Postitatud <?=$post['post_created']?></span><div class="pull-right"><span class="label">alice</span> <span class="label">story</span> <span class="label">blog</span> <span class="label">personal</span></div>
     </div>
-</nav>
+    <hr>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-
-        <!-- Post Content Column -->
-        <div class="col-lg-8">
-
-            <!-- Title -->
-            <h1 class="mt-4">Post Title</h1>
-
-            <!-- Author -->
-            <p class="lead">
-                by
-                <a href="#">Start Bootstrap</a>
-            </p>
-
-            <hr>
-
-            <!-- Date/Time -->
-            <p>Posted on January 1, 2018 at 12:00 PM</p>
-
-            <hr>
-
-            <!-- Preview Image -->
-            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-
-            <hr>
-
-            <!-- Post Content -->
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-            <blockquote class="blockquote">
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in
-                    <cite title="Source Title">Source Title</cite>
-                </footer>
-            </blockquote>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
-            <hr>
-
-            <!-- Comments Form -->
-            <div class="card my-4">
-                <h5 class="card-header">Leave a Comment:</h5>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Single Comment -->
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-            </div>
-
-            <!-- Comment with nested comments -->
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-                    <div class="media mt-4">
-                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                        <div class="media-body">
-                            <h5 class="mt-0">Commenter Name</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </div>
-
-                    <div class="media mt-4">
-                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                        <div class="media-body">
-                            <h5 class="mt-0">Commenter Name</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-            <!-- Search Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categories Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">Web Design</a>
-                                </li>
-                                <li>
-                                    <a href="#">HTML</a>
-                                </li>
-                                <li>
-                                    <a href="#">Freebies</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">JavaScript</a>
-                                </li>
-                                <li>
-                                    <a href="#">CSS</a>
-                                </li>
-                                <li>
-                                    <a href="#">Tutorials</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Side Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Side Widget</h5>
-                <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <!-- /.row -->
-
+    <?endforeach?>
 </div>
-<!-- /.container -->
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-    </div>
-    <!-- /.container -->
-</footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<!--<h1>Welcome!</h1>
+<p>This is the welcome controller's default view file. It is located at <code>/views/welcome/welcome_index.php</code>.
+</p>
+<h2>Examples</h2>
+<p>Below are some examples how to use Halo</p>
+<h3>Adding pages</h3>
+<p>For example, to To have the URL localhost/halo/<span class="label label-primary">posts/view/3</span> working, visit
+    <a href="halo">Halo admin</a> and create a subpage there, or do it manually:</p>
+<ol>
+    <li>Create new file <code>/controllers/<i>posts</i>.php</code></li>
+    <li>In that file create <code>class posts</code> (lower case letters) which <code>extends Controller</code>
+        (capitalized)
+    </li>
+    <li>Create <code>function index()</code> within that class. This is the default action which will be called when no
+        action is specified (e.g. just /posts). There you can set all the variables your view will need.
+    </li>
+    <li>Create <code>function view()</code> within that class.
+        This is the <i>action</i> that gets run when users access <code>posts/view...</code>.
+        Here you usually make a database query and put its result into a variable that is preceded with
+        <code>$this</code>
+        (so that you can later access it from the <i>view</i>).
+        To access what is put after the action name on the URL (<code>3</code> in our example), use <code>$this->params[0]</code>.
+        An example: <code>$this->post = get_one("SELECT * FROM post WHERE id={$this->params[0]}");</code> (You would
+        have to create the <i>post</i> table in your database and add at least <i>id</i> field to it, of course)
+    </li>
+    <li>Create new folder <code>/views/posts</code></li>
+    <li>Create new file <code>/views/posts/posts_view</code></li>
+    <li>Place content to that file. You could <code>&lt;?php var_dump($post)?></code> for starters.</li>
+</ol>
+<h3>Sending data to server</h3>
+<h4>jQuery $.post (Ajax) submit example</h4>
+Fill the name field below and click <i>submit form using ajax</i>.
+<form id="ajax-form">
+    Your name: <input type="text" placeholder="Write something here" name="name"/><br/>
+</form>
+<a onclick="success()">Submit form using ajax (success)</a><br/>
+<a onclick="error()">Submit form using ajax (error)</a><br/>
+The form containing the name field will be submitted to the
+server by jQuery and server's response will be written to the box below.
+<div class="well result"></div>
+<h4>Traditional POST submit example</h4>
+<p>Here is an example how to use traditional POST to send data to the server. Click Post after filling the form. The
+    server will invoke <code>post::post_index()</code> action (which is in <code>/controllers/posts.php</code> file)
+    which just dumps $_POST to the screen.</p> -->
+<!-- Button for executing post -->
+<!--<form method="post">
+    <input type="text" name="foobar"/>
+    <input type="submit" value="Post"/>
+</form> -->
 
-</html>
+<!-- Code for ajax -->
+<!--<script type="text/javascript">
+    function success() {
+        ajax("welcome/success", $("#ajax-form").serialize(), function (json) {
+            $(".result").html(json.data);
+        });
+    }
+    function error() {
+        ajax("welcome/error", $("#ajax-form").serialize(), function (json) {
+            $(".result").html(json.data);
+        });
+    }
+</script> -->
