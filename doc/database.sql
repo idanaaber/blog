@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 13, 2019 at 08:50 AM
+-- Generation Time: Feb 13, 2019 at 09:55 AM
 -- Server version: 5.6.41
 -- PHP Version: 7.2.7
 
@@ -16,8 +16,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `kevinran_blog`
 --
-CREATE DATABASE IF NOT EXISTS `kevinran_blog` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `kevinran_blog`;
 
 -- --------------------------------------------------------
 
@@ -26,15 +24,13 @@ USE `kevinran_blog`;
 --
 
 DROP TABLE IF EXISTS `post`;
-CREATE TABLE IF NOT EXISTS `post` (
-  `post_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `post` (
+  `post_id` int(10) UNSIGNED NOT NULL,
   `post_subject` varchar(255) NOT NULL,
   `post_text` text NOT NULL,
   `post_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`post_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `user_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `post`
@@ -50,16 +46,14 @@ INSERT INTO `post` (`post_id`, `post_subject`, `post_text`, `post_created`, `use
 --
 
 DROP TABLE IF EXISTS `translations`;
-CREATE TABLE IF NOT EXISTS `translations` (
-  `translation_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `translations` (
+  `translation_id` int(10) UNSIGNED NOT NULL,
   `phrase` varchar(191) NOT NULL,
   `language` char(3) NOT NULL,
   `translation` varchar(191) DEFAULT NULL,
   `controller` varchar(15) NOT NULL,
-  `action` varchar(20) NOT NULL,
-  PRIMARY KEY (`translation_id`),
-  UNIQUE KEY `language_phrase_controller_action_index` (`language`,`phrase`,`controller`,`action`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+  `action` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `translations`
@@ -90,7 +84,8 @@ INSERT INTO `translations` (`translation_id`, `phrase`, `language`, `translation
 (22, 'Sign in', 'en', '{untranslated}', 'global', 'global'),
 (23, 'Oops...', 'en', '{untranslated}', 'global', 'global'),
 (24, 'Close', 'en', '{untranslated}', 'global', 'global'),
-(25, 'Server returned an error. Please try again later ', 'en', '{untranslated}', 'global', 'global');
+(25, 'Server returned an error. Please try again later ', 'en', '{untranslated}', 'global', 'global'),
+(26, 'Action', 'en', '{untranslated}', 'global', 'global');
 
 -- --------------------------------------------------------
 
@@ -99,15 +94,14 @@ INSERT INTO `translations` (`translation_id`, `phrase`, `language`, `translation
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `user_id` int(10) UNSIGNED NOT NULL,
   `is_admin` tinyint(4) NOT NULL DEFAULT '0',
   `password` varchar(191) NOT NULL,
   `email` varchar(191) NOT NULL,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `name` varchar(191) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  `name` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -115,6 +109,52 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_id`, `is_admin`, `password`, `email`, `deleted`, `name`) VALUES
 (1, 1, '$2y$10$vTje.ndUFKHyuotY99iYkO.2aHJUgOsy2x0RMXP1UmrTe6CQsKbtm', 'demo@example.com', 0, 'Demo User');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`post_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `translations`
+--
+ALTER TABLE `translations`
+  ADD PRIMARY KEY (`translation_id`),
+  ADD UNIQUE KEY `language_phrase_controller_action_index` (`language`,`phrase`,`controller`,`action`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `post_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `translations`
+--
+ALTER TABLE `translations`
+  MODIFY `translation_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
